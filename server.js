@@ -14,6 +14,8 @@ const https = require("https");
 const app = express();
 const morgan = require("morgan");
 
+
+app.use(morgan("dev"));
 // Middlewares - Place these first
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -89,7 +91,7 @@ app.post("/response", (req, res) => {
 // Start the server only after DB connection success
 const PORT = process.env.PORT || 4001;
 
-app.use(morgan("dev"));
+
 
 // Optional: check Sequelize connection before starting server
 sequelize
