@@ -20,7 +20,7 @@ const sequelize = new Sequelize(config.database, config.user, config.password, {
 
 exports.getAllUserTypeCategories = async (req, res) => {
   try {
-    const query = `SELECT * FROM user_type_category;`;
+    const query = `SELECT * FROM user_type_category WHERE user_type_category_name != 'SUPER ADMIN';`;
 
     const [results] = await sequelize.query(query, {
       raw: true,
