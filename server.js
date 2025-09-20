@@ -46,7 +46,7 @@ const channelPartnerRoutes = require("./src/routes/channelPartnerRoutes");
 const decrypt = require("./src/services/payment");
 const ccavReqHandler = require("./src/payment/ccavRequestHandler.js");
 const ccavResHandler = require("./src/payment/ccavResponseHandler.js");
-
+const userTypeRoutes = require("./src/routes/userTypeRoutes.js");
 const adminController = require("./src/controllers/adminController.js");
 
 // Public routes
@@ -61,6 +61,7 @@ app.use("/property", propertyRoutes);
 app.use("/user", userRoutes);
 app.use("/partner-builder", partnerBuilderRoutes);
 app.use("/channel-partner", channelPartnerRoutes);
+app.use("/", userTypeRoutes);
 
 // CCAvenue routes
 app.set("views", __dirname + "/src/payment/public");
